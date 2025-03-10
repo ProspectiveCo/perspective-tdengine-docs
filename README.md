@@ -138,34 +138,20 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:***YOUR PATH***/tdengine-client/driver"
 
 <br/>
 
-## Node JS: for Streaming data visualization
+## Node.js: for Streaming Data Visualization
 
-TDB.
+WIP -- code example to setup:
+- perspective  streaming Node server.
+- run streaming demo dataset
+- embed perspective viewer component React/HTML component
 
 <br/>
 
-## Python: for Streaming data visualization
-
-<br/>
-
-The architecture is as follow:
-
-1. Install TDengine python client libs (taospy).
-1. Instantiate a TDengine docker container.
-1. Start a producer script (`producer.py`) which simulates real-time data ingestion into TDengine.
-1. Start a perspective-python server (`perspective_server.py`) which reads data periodically from TDengine and publishes it out to Perspective real-time Table via a Tornado Websocket.
-1. Embed a Perspective viewer in HTML and connect to the backend Server.
-1. Visualize and interact with TDengine data in real-time
-
-<br/><br>
-
-## Overview
-
-This guide demonstrates how to integrate [TDengine](https://tdengine.com/), a high-performance time-series database, with [Perspective](https://perspective.finos.org/), a powerful data visualization library. By combining these technologies, you can create a real-time data visualization platform that streams data from TDengine to a web-based Perspective viewer.
-
-![TDengine - Perspective Architecture](imgs/tdengine_prsp_architecture.jpg)
+## Python: for Streaming Data Visualization
 
 ### Key Steps:
+
+![TDengine - Perspective Architecture](imgs/tdengine_prsp_architecture.jpg)
 
 1. **Install and Configure TDengine client**: Set up the TDengine python client.
 2. **Docker Setup**: Deploy a TDengine Docker container and populate it with benchmark data.
@@ -178,15 +164,6 @@ By following these steps, you can create a scalable and efficient platform for r
 
 We hope this guide has been helpful in getting you started with TDengine and Perspective. For further information and advanced features, please refer to the helpful resources provided. Happy coding!
 
-### TDengine
-
-[TDengine](https://tdengine.com/) is a high-performance, scalable time-series database designed specifically for handling large volumes of time-series data. It excels in scenarios requiring real-time data ingestion, storage, and analysis, making it an ideal choice for monitoring metrics in various industries such as IoT, finance, and telecommunications. TDengine's efficient data compression, high throughput, and low-latency query capabilities enable organizations to gain actionable insights from their time-series data, ensuring timely and informed decision-making.
-
-### Perspective
-
-Perspective is a powerful data visualization library that enables interactive, real-time data analysis in web applications. Developed by [Prospective.co](https://prospective.co), Perspective leverages WebAssembly and Web Workers to provide high-performance data visualization capabilities directly in the browser. With Perspective, you can create dynamic dashboards, charts, and tables that update in real-time, allowing users to explore and interact with data seamlessly. Perspective's flexibility, speed, and ease of use make it an excellent choice for building data-driven applications that require real-time data visualization and analysis.
-
-<br/><br/>
 
 ### 3. Start a TDengine Docker container
 
@@ -506,25 +483,6 @@ The `perspective-viewer` element is configured with the "Pro Dark" theme to matc
 
 <br/><br/>
 
-## Conclusion
-
-In this guide, we have walked through the process of integrating TDengine with Perspective to create a real-time data visualization platform. By following the steps outlined, you have learned how to:
-
-1. Install and configure the TDengine client and server.
-2. Set up a Docker container for TDengine and populate it with benchmark data.
-3. Create a virtual environment and install necessary Python dependencies.
-4. Implement a data producer to simulate real-time data ingestion into TDengine.
-5. Develop a Perspective server to stream data from TDengine to a web-based Perspective viewer.
-6. Embed and configure a Perspective viewer in an HTML page to visualize the data.
-
-This integration allows you to leverage the high-performance time-series database capabilities of TDengine with the powerful data visualization features of Perspective. The combination of these technologies provides a robust solution for real-time data analysis and monitoring.
-
-By following the provided examples and scripts, you can customize and extend this setup to fit your specific use case. Whether you are monitoring stock prices, IoT sensor data, or any other time-series data, this integration offers a scalable and efficient way to visualize and interact with your data in real-time.
-
-We hope this guide has been helpful in getting you started with TDengine and Perspective. For further information and advanced features, please refer to the helpful resources provided. Happy coding!
-
-<br/><br/>
-
 ## Helpful Resources
 
 - **TDengine client library examples including python and node.js:** Download [TDengine's client library](https://docs.tdengine.com/tdengine-reference/client-libraries/#install-client-driver) tar file and unpack it. Look inside the examples directory for a comprehensive list of examples.
@@ -532,6 +490,3 @@ We hope this guide has been helpful in getting you started with TDengine and Per
 - [TDengine Docker Container with Data](https://docs.tdengine.com/get-started/deploy-in-docker/)
 - [TDengine SQL Reference](https://docs.tdengine.com/basic-features/data-querying/)
 - [Inserting data into TDengine](https://docs.tdengine.com/basic-features/data-ingestion/)
-
-Next steps:
-- [Streaming data from TDengine](https://docs.tdengine.com/advanced-features/stream-processing/)
