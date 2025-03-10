@@ -1,4 +1,4 @@
-# WP: Perspective TDengine Docs
+# WIP: Perspective TDengine Docs
 
 A work-in-progress project to collaborate on Perspective <> TDengine docs. Goal: launch on both TDengine & Perspective docs pages.
 
