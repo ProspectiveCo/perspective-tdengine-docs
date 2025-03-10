@@ -10,32 +10,131 @@ A work-in-progress project to collaborate on Perspective <> TDengine docs. Goal:
 
 This document explains how to setup [Perspective](https://perspective.finos.org) -- a Local-first all-in-browser open source tool for fast streaming data visualization -- with TDengine.
 
-### Goals
+## Goals
 
 After reading this doc, you will be able to:
-- TODO -- list goals, short list aligned with headers below.
 
-### Table of Content
+- Run the demo docker containers -- one step shop to demo the result of this doc!
+- Install and configure Perspective & TDengine client libraries.
+- Setup Prospective.co (commercial product) to create analytical dashabords on top of TDengine tables.
+- Setup streaming data visualization with:
+  - Python
+  - Node JS
 
-- TODO -- update TOC
+## Table of Contents
+
+1. [Overview](#overview)
+2. Run demo docker
+3. Building interactive analytical dashboards with Prospective
+4. Installing Perspective and TDengine client libs
+5. Streaming visualization using Perspective and python client
+6. Streaming visualization using Perspective and Node client
+7. [Helpful Resources](#helpful-resources)
 
 ## Source Code
+
+You can find the source files for this doc by cloning our git repo:
 
 ```bash
 git clone https://github.com/ProspectiveCo/perspective-tdengine-docs.git
 ```
 
-## Perspective Intro
+<br/>
 
-TODO -- Add a brief intro for Perspective and Prospective (with links). Focus on open source, local-first, webassembly performance, streaming data visualization. Mention Prospective available to try with limited data adapters (Files, S3, HTTP).
+## Overview
+
+## Perspective -- remove in perspective docs
+
+[Perspective](https://perspective.finos.org/) is an open-source, high-performance data visualization engine built for streaming and real-time analytics. It is a local-first library that runs entirely in the browser using WebAssembly, making it incredibly fast for rendering large datasets. It supports a range of data formats, including CSV, JSON, Arrow, real-time WebSocket streams, and integrates with TDengine adapters and S3. Perspective client libraries are available in Python, Node.js, and Rust.
+
+Maintained by Prospective.co, Perspective allows for highly interactive visualizations, making it a preferred tool for financial analytics, IoT data, and other real-time monitoring applications. It offers:
+
+- **WebAssembly performance**: Runs efficiently in browsers without heavy server dependencies.
+- **Streaming-first architecture**: Designed to process live, real-time data updates.
+- **Declarative UI components**: Easily integrates into HTML, React, and Jupyter environments.
+
+## TDengine  -- remove in TDengine docs
+
+WIP -- draft, update
+
+TDengine is a high-performance, scalable time-series database designed for handling large volumes of time-series data. It excels in real-time data ingestion, storage, and analysis, making it ideal for IoT, finance, and telecom applications. Key features include:
+
+- Efficient data compression
+- High-throughput ingestion
+- Low-latency queries
+- Native time-series optimizations
+
+
+<br/>
+
+## Run Demo \`docker-compose\`
+
+WIP -- joint docker compose script to:
+- setups up perspective and tdengine instances
+- load demo dataset
+- run perspective streaming server both in python and node
+
+<br/>
 
 ## Prospective.co: TDengine data adaptor for traditional Dashboarding
 
-TBD.
+WIP: -- instructions to setup a live dashboard using Prospective TDengine data connector.
+
+[Loom](https://www.loom.com/share/4d6f07552051440291075218e9bb800c?sid=54cc5c09-826a-4524-8227-3407fc5243a1)
+
+<br/>
+
+## Getting Started: install Client libs
+
+Run the `install.sh` script to download and install the TDengine client libraries locally. This is necessary for the TDengine Python SDK (taospy) to function.
+
+For more information on installing TDengine's client, please refer to [install client library](https://docs.tdengine.com/tdengine-reference/client-libraries/#install-client-driver) docs.
+
+```sh
+./install.sh
+```
+
+### 2. Check the client installation
+
+After the install script runs, please verify if the everything is setup correctly.
+
+You should see a symlink for `libtaos.so` in:
+
+```sh
+ls -l tdengine-client/driver/
+```
+
+Output:
+
+```txt
+total 68488
+lrwxrwxrwx 1 warthog warthog       18 Jan  7 16:08 libtaos.so -> libtaos.so.3.3.5.0
+-rwxr-xr-x 1 warthog warthog 59186032 Dec 31 03:42 libtaos.so.3.3.5.0
+-rwxr-xr-x 1 warthog warthog 10937480 Dec 31 03:42 libtaosws.so
+-rw-r--r-- 1 warthog warthog        8 Dec 31 03:42 vercomp.txt
+```
+
+Check if the client lib folder is correctly added to `$LD_LIBRARY_PATH`:
+
+```sh
+echo $LD_LIBRARY_PATH
+```
+
+`LD_LIBRARY_PATH` should have been added to your bash profile file. Please check to ensure that it is set properly.
+
+If you don't see this line at the end of your `~/.bashrc` or `~/.bash_profile`, please add it:
+
+```sh
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:***YOUR PATH***/tdengine-client/driver"
+```
+
+<br/>
 
 ## Node JS: for Streaming data visualization
 
 TDB.
+
+<br/>
 
 ## Python: for Streaming data visualization
 
@@ -80,52 +179,6 @@ We hope this guide has been helpful in getting you started with TDengine and Per
 Perspective is a powerful data visualization library that enables interactive, real-time data analysis in web applications. Developed by [Prospective.co](https://prospective.co), Perspective leverages WebAssembly and Web Workers to provide high-performance data visualization capabilities directly in the browser. With Perspective, you can create dynamic dashboards, charts, and tables that update in real-time, allowing users to explore and interact with data seamlessly. Perspective's flexibility, speed, and ease of use make it an excellent choice for building data-driven applications that require real-time data visualization and analysis.
 
 <br/><br/>
-
-## Getting Started
-
-### 1. Install TDengine client
-
-Run the `install.sh` script to download and install the TDengine client libraries locally. This is necessary for the TDengine Python SDK (taospy) to function.
-
-For more information on installing TDengine's client, please refer to [install client library](https://docs.tdengine.com/tdengine-reference/client-libraries/#install-client-driver) docs.
-
-```sh
-./install.sh
-```
-
-### 2. Check the client installation
-
-After the install script runs, please verify if the everything is setup correctly.
-
-You should see a symlink for `libtaos.so` in:
-
-```sh
-ls -l tdengine-client/driver/
-```
-
-Output:
-
-```txt
-total 68488
-lrwxrwxrwx 1 warthog warthog       18 Jan  7 16:08 libtaos.so -> libtaos.so.3.3.5.0
--rwxr-xr-x 1 warthog warthog 59186032 Dec 31 03:42 libtaos.so.3.3.5.0
--rwxr-xr-x 1 warthog warthog 10937480 Dec 31 03:42 libtaosws.so
--rw-r--r-- 1 warthog warthog        8 Dec 31 03:42 vercomp.txt
-```
-
-Check if the client lib folder is correctly added to `$LD_LIBRARY_PATH`:
-
-```sh
-echo $LD_LIBRARY_PATH
-```
-
-`LD_LIBRARY_PATH` should have been added to your bash profile file. Please check to ensure that it is set properly.
-
-If you don't see this line at the end of your `~/.bashrc` or `~/.bash_profile`, please add it:
-
-```sh
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:***YOUR PATH***/tdengine-client/driver"
-```
 
 ### 3. Start a TDengine Docker container
 
