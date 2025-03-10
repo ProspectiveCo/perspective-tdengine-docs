@@ -13,16 +13,21 @@ This document explains how to setup [Perspective](https://perspective.finos.org)
 ### Goals
 
 After reading this doc, you will be able to:
-- TBD
+- TODO -- list goals, short list aligned with headers below.
 
 ### Table of Content
 
+- TODO -- update TOC
 
 ## Source Code
 
 ```bash
 git clone https://github.com/ProspectiveCo/perspective-tdengine-docs.git
 ```
+
+## Perspective Intro
+
+TODO -- Add a brief intro for Perspective and Prospective (with links). Focus on open source, local-first, webassembly performance, streaming data visualization. Mention Prospective available to try with limited data adapters (Files, S3, HTTP).
 
 ## Prospective.co: TDengine data adaptor for traditional Dashboarding
 
