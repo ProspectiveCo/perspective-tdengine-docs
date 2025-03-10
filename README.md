@@ -8,6 +8,10 @@ A work-in-progress project to collaborate on Perspective <> TDengine docs. Goal:
 
 [![TDengine - Perspective Integration](imgs/prsp-tdengine_short.gif)](https://www.loom.com/share/5aa9f1d435d6430c99efa02559d3cd6c?sid=54d0ffbe-1906-4513-ad05-1898c8cbbe2d)
 
+[loom](https://www.loom.com/share/5aa9f1d435d6430c99efa02559d3cd6c?sid=54d0ffbe-1906-4513-ad05-1898c8cbbe2d)
+
+<br/>
+
 This document explains how to setup [Perspective](https://perspective.finos.org) -- a Local-first all-in-browser open source tool for fast streaming data visualization -- with TDengine.
 
 ## Goals
@@ -16,7 +20,7 @@ After reading this doc, you will be able to:
 
 - Run the demo docker containers -- one step shop to demo the result of this doc!
 - Install and configure Perspective & TDengine client libraries.
-- Setup Prospective.co (commercial product) to create analytical dashabords on top of TDengine tables.
+- Setup Prospective.co (commercial product) to create analytical dashboards on top of TDengine tables.
 - Setup streaming data visualization with:
   - Python
   - Node JS
@@ -41,9 +45,9 @@ git clone https://github.com/ProspectiveCo/perspective-tdengine-docs.git
 
 <br/>
 
-## Overview
+## Perspective Overview 
 
-## Perspective -- remove in perspective docs
+-- remove in perspective docs
 
 [Perspective](https://perspective.finos.org/) is an open-source, high-performance data visualization engine built for streaming and real-time analytics. It is a local-first library that runs entirely in the browser using WebAssembly, making it incredibly fast for rendering large datasets. It supports a range of data formats, including CSV, JSON, Arrow, real-time WebSocket streams, and integrates with TDengine adapters and S3. Perspective client libraries are available in Python, Node.js, and Rust.
 
@@ -53,7 +57,9 @@ Maintained by Prospective.co, Perspective allows for highly interactive visualiz
 - **Streaming-first architecture**: Designed to process live, real-time data updates.
 - **Declarative UI components**: Easily integrates into HTML, React, and Jupyter environments.
 
-## TDengine  -- remove in TDengine docs
+## TDengine Overview
+
+-- remove in TDengine docs
 
 WIP -- draft, update
 
@@ -80,7 +86,9 @@ WIP -- joint docker compose script to:
 
 WIP: -- instructions to setup a live dashboard using Prospective TDengine data connector.
 
-[Loom](https://www.loom.com/share/4d6f07552051440291075218e9bb800c?sid=54cc5c09-826a-4524-8227-3407fc5243a1)
+[![TDEngine loom video](imgs/pro_tdengine_loom_thumbnail.png)](https://www.loom.com/share/4d6f07552051440291075218e9bb800c?sid=54cc5c09-826a-4524-8227-3407fc5243a1)
+
+[loom](https://www.loom.com/share/4d6f07552051440291075218e9bb800c?sid=54cc5c09-826a-4524-8227-3407fc5243a1)
 
 <br/>
 
